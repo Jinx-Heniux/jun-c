@@ -3,9 +3,11 @@
 
 void test1();
 void runnian1();
-void whiletest1();
-void whiletest2();
-void iftest1();
+void while1();
+void while2();
+void if1();
+void multiscanf1();
+void printf1();
 
 int main()
 {
@@ -13,11 +15,15 @@ int main()
 
 	// runnian1();
 
-	// whiletest1();
+	// while1();
 
-	// whiletest2();
+	// while2();
 
-	iftest1();
+	//if1();
+
+	//multiscanf1();
+
+	printf1();
 }
 
 void test1() {
@@ -53,7 +59,7 @@ void runnian1() {
 	}
 }
 
-void whiletest1() {
+void while1() {
 	int i;
 	// printf("%d", i); // 错误，uninitialized local variable 'i' used
 	scanf("%d", &i);
@@ -64,14 +70,14 @@ void whiletest1() {
 	}
 }
 
-void whiletest2() {
+void while2() {
 	int i,re;
 	while (rewind(stdin), (re=scanf("%d", &i)) != EOF) { // while (scanf("%d", &i))
 		printf("re=%d, i=%d\n", re, i);
 	}
 }
 
-void iftest1() {
+void if1() {
 	char c;
 	while (scanf("%c", &c) != EOF) {
 		if (c != '\n') {
@@ -82,4 +88,18 @@ void iftest1() {
 		}
 		
 	}
+}
+
+void multiscanf1() {
+	int i;
+	char c;
+	float f;
+	int ret;
+	ret=scanf("%d %c%f", &i, &c, &f);
+	printf("i=%d, c=%c, f=%f", i, c, f);
+	return 0;
+}
+
+void printf1() {
+	printf("i=%d, s=%s, c=%c, f=%4.2f", 1, "abc", 'a', 999.777);
 }
